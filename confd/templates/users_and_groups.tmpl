@@ -1,0 +1,45 @@
+version: 1
+
+dn: cn=InsisStaff,ou=Groups,{{getv "/dirsrv/suffix"}}
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: InsisStaff
+uniqueMember: uid=insis_gen_v12,ou=People,{{getv "/dirsrv/suffix"}}
+
+dn: cn=InsisAdministrator,ou=Groups,{{getv "/dirsrv/suffix"}}
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: InsisAdministrator
+uniqueMember: uid=insis_gen_v12,ou=People,{{getv "/dirsrv/suffix"}}
+
+dn: uid=insis_gen_v12,ou=People,{{getv "/dirsrv/suffix"}}
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: insis_gen_v12
+sn: insis_gen_v12
+uid: insis_gen_v12
+mail: insis_gen_v12@vig.intr
+givenName: Insis V12
+l: en
+sn: Insis
+preferredLanguage: en
+userPassword: insis_gen_v12
+
+dn: uid=admin,ou=People,{{getv "/dirsrv/suffix"}}
+objectClass: organizationalPerson
+objectClass: person
+objectClass: extensibleObject
+objectClass: uidObject
+objectClass: inetOrgPerson
+objectClass: top
+cn: OpenShift
+sn: Admin
+uid: admin
+givenName: Cluster Admin
+mail: admin@example.com
+member: cn=ClusterAdmins,ou=groups,{{getv "/dirsrv/suffix"}}
+mobile: 9900001101
+ou: People
+userPassword: password
